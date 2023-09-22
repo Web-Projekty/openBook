@@ -1,8 +1,14 @@
-.grid{
+.grid {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     grid-template-rows: 100px;
 }
-.logo{
-    font-size: 2em;
+.logo {
+    font-size: 3em;
+}
+.post {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 80px 1fr 3fr;
+    grid-template-rows: 60px;
 }
