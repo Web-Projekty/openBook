@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2023 at 09:47 PM
+-- Generation Time: Sep 22, 2023 at 11:57 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,8 +31,37 @@ CREATE TABLE `post` (
   `postID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `postName` varchar(64) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp()
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_czech_ci;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`postID`, `userID`, `postName`, `date`) VALUES
+(1, 1, 'Hello world', '2023-09-22 19:45:00'),
+(2, 1, 'I also here', '2023-09-22 19:56:00'),
+(3, 2, 'Hello kelo to', '2023-09-22 20:23:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `userID` int(11) NOT NULL,
+  `userName` varchar(16) NOT NULL,
+  `userImgID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_czech_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userID`, `userName`, `userImgID`) VALUES
+(1, 'Wlczak', 1),
+(2, 'Vlasta\'s corp.', 2);
 
 --
 -- Indexes for dumped tables
@@ -45,6 +74,12 @@ ALTER TABLE `post`
   ADD PRIMARY KEY (`postID`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`userID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -52,7 +87,13 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
