@@ -14,16 +14,17 @@
     grid-template-areas:
         "profile_picture username post_descripiton"
         "post post post";
+        margin-bottom: 50px;
 }
 .profile_logo {
     height: 50px;
     width: 50px;
     border-radius: 50%;
     align-self: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 .post {
-    width: 100%;
+    margin: auto;
+    width: 80%;
     grid-area: post;
 }
