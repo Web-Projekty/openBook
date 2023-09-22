@@ -17,15 +17,19 @@
         </div>
         <div class="grid-item3"></div>
         <div class="grid-item4"></div>
-        <div class="content">
-            <div class="post">
-                <img src="" alt="user_logo">
+        <!-- !!POST!!
+             <div class="content">
+            <div class="post_container">
+                <img src="/prototype/img/profile/profile_1.png" alt="user_logo" class="profile_logo">
                 <h3 class="username">username</h3>
-                <h4></h4>
+                <h4>post_descripiton</h4>
+                <img class="post" src="/prototype/img/post/post_1.png" alt="post_img">
             </div>
-
-        </div>
-        <div class="grid-item6"></div>
+-->
+        <?php
+        echo "hi"; ?>
+    </div>
+    <div class="grid-item6"></div>
     </div>
 </body>
 
