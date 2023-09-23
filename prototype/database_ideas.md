@@ -7,6 +7,7 @@ USER
 	->userID <int>
 	->userName <varchar(16)>
 	->userImgID <int>
+	->password <varchar(hash_format.length)>
 REACTION
 	->postID <int>
 	->userID <int>

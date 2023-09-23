@@ -13,7 +13,9 @@
         <div class="grid-item1"></div>
         <div class="grid-item2">
             <!-- Logo-->
-            ><a class="logo">LOGO HERE</a>
+            <div>
+                ><a class="logo">LOGO HERE</a></div>
+            <h2 class="login">login</h2>
         </div>
         <div class="grid-item3"></div>
         <div class="grid-item4"></div>

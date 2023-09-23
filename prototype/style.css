@@ -1,10 +1,17 @@
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr minmax(650px, 1.7fr) 1fr;
     grid-template-rows: 100px;
 }
 .logo {
     font-size: 3em;
+}
+.grid-item2 {
+    display: flex;
+    justify-content: space-between;
+}
+h2 {
+    text-align: center;
 }
 .post_container {
     border: 1px solid black;
@@ -14,7 +21,7 @@
     grid-template-areas:
         "profile_picture username post_descripiton"
         "post post post";
-        margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 .profile_logo {
     height: 50px;
