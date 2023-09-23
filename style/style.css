@@ -35,3 +35,10 @@ h2 {
     width: 80%;
     grid-area: post;
 }
+.link{
+    text-decoration: none;
+    
+}
+.link:hover{
+    font-weight: 300;
+}
