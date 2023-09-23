@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>>_Open\|/Book - Home</title>
+    <link rel="shortcut icon" href="/prototype/logo/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/prototype/style/style.css" />
 </head>
 
@@ -14,7 +15,8 @@
         <div class="grid-item2">
             <!-- Logo-->
             <div>
-                ><a class="logo">LOGO HERE</a></div>
+                >_<a class="logo">Open\|/Book
+                </a></div>
             <h2 class="login">login</h2>
         </div>
         <div class="grid-item3"></div>
