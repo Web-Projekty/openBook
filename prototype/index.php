@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/prototype/style/style.css" />
 </head>
 
 <body>
@@ -32,7 +32,7 @@
             <?php
 
             #import of mySQL config file
-            include("mySQL_config.php");
+            include("db_config/mySQL_config.php");
 
             #mySQL connection and data SELECT
             $mySQL = mysqli_connect($host, $user, $password, $database);
