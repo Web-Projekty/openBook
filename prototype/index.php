@@ -2,11 +2,16 @@
 <html lang="cs">
 
 <head>
+    <!-- import of set-up files -->
+    <?php
+    include("session/session_start.php");
+    ?>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>>_Open\|/Book - Home</title>
     <link rel="shortcut icon" href="/prototype/logo/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="/prototype/style/style.css" />
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -17,7 +22,15 @@
             <div>
                 >_<a class="logo">Open\|/Book
                 </a></div>
-            <h2 class="login">login</h2>
+            <h2 id='login' onmouseenter="text_add('login')" onmouseleave="text_remove('login')">
+                <?php
+                if ($_SESSION["logged_in"] == true) {
+                    echo "login";
+                } else {
+                    echo "register";
+                }
+                ?></h2>
+
         </div>
         <div class="grid-item3"></div>
         <div class="grid-item4"></div>
@@ -63,6 +76,7 @@
 
             mysqli_close($mySQL);
             ?>
+
         </div>
     </div>
     <div class="grid-item6"></div>
