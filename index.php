@@ -22,14 +22,14 @@
             <div>
                 >_<a class="logo">Open\|/Book
                 </a></div>
-            <h2 class="link" id='login' onmouseenter="text_add('login')" onmouseleave="stop_timeout()">
+            <a href="login.php" class="link"><h2 id='login' onmouseenter="text_add('login')" onmouseleave="stop_timeout()">
                 <?php
                 if ($_SESSION["logged_in"] == true) {
-                    echo "login";
+                    echo "log in";
                 } else {
                     echo "register";
                 }
-                ?></h2>
+                ?></h2></a>
 
         </div>
         <div class="grid-item3"></div>

@@ -11,7 +11,7 @@ function text_add(id) {
         this.timeout_remove = setTimeout(() => {
             //The f*ck is this??? (Aparently this is called a wrapper function, but I have no idea why does it even work)
             text_remove(id);
-        }, 1000);
+        }, 500);
     }
     else{
         this.stop = false
@@ -30,7 +30,7 @@ function text_remove(id) {
         this.timeout_add = setTimeout(() => {
             //The f*ck is this??? (Aparently this is called a wrapper function, but I have no idea why does it even work)
             text_add(id);
-        }, 1000);
+        }, 500);
     }
     else{
         this.stop = false
