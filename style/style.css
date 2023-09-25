@@ -5,6 +5,8 @@
 }
 .logo {
     font-size: 3em;
+    text-decoration: none;
+    color: inherit;
 }
 .grid-item2 {
     display: flex;
