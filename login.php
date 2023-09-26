@@ -83,7 +83,14 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
         #makes associative array
         $query_result = mysqli_fetch_assoc($query_return);
         if($query_result["password"] == $password){
-            echo "fuck yeahhhh";
+            echo "
+            <script>
+                var element1 = document.getElementById('form_border')
+                element1.style.border = '2px green dashed'
+                var element2 = document.getElementById('warning')
+                element2.innerHTML = '>_logged in succesfully'
+                element2.style.display = ''
+            </script>";
         }
     }
     if ($_SESSION["msg"] != null) {

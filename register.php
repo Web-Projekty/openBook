@@ -106,17 +106,26 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
         } else {
             $query = "INSERT INTO `user` (`userID`, `userName`, `userImgID`, `password`) VALUES (NULL, '" . $username . "', NULL, '" . $password . "')";
             $query_return = mysqli_query($mySQL, $query);
+            echo "
+            <script>
+                var element1 = document.getElementById('form_border')
+                element1.style.border = '2px green dashed'
+                var element2 = document.getElementById('warning')
+                element2.innerHTML = '>_registered succesfully'
+                element2.style.display = ''
+            </script>";
         }
     }
     if ($_SESSION["msg"] != null) {
         #script for fucked up form
-        echo "<script>
-    var element1 = document.getElementById('form_border')
-    element1.style.border = '2px red dashed'
-    var element2 = document.getElementById('warning')
-    element2.innerHTML = '>_missingElements[" . $_SESSION["msg"] . "]'
-    element2.style.display = ''
-</script>";
+        echo "
+            <script>
+                var element1 = document.getElementById('form_border')
+                element1.style.border = '2px red dashed'
+                var element2 = document.getElementById('warning')
+                element2.innerHTML = '>_missingElements[" . $_SESSION["msg"] . "]'
+                element2.style.display = ''
+            </script>";
     }
 }
 
