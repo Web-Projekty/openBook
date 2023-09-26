@@ -47,7 +47,7 @@ h2 {
     font-style: italic;
 }
 /**/
-.login{
+.login {
     margin: auto;
     margin-top: 250px;
     border: 1px black;
@@ -56,17 +56,17 @@ h2 {
     width: 300px;
     align-self: center;
 }
-.login_form{
+.login_form {
     display: flex;
     flex-direction: column;
 }
-.input{
+.input {
     align-self: center;
     margin: 10px;
     width: 80%;
     height: 25px;
 }
-.button{
+.button {
     width: 50%;
     height: 25px;
     align-self: center;
@@ -75,13 +75,12 @@ h2 {
     border-radius: 10px;
     transition: 300ms;
 }
-.button:hover{
+.button:hover {
     background-color: rgb(209, 209, 209);
     border-radius: 15px;
     scale: 105%;
     font-style: italic;
-
 }
-.center{
+.center {
     text-align: center;
 }
