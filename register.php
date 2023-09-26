@@ -62,10 +62,10 @@ $_SESSION["msg"] = "";
 #form data check
 if (!empty($_GET["username"]) || !empty($_GET["password"])) {
 
-
+#creates a message for user warning
     if ($_GET["username"] == null || $_GET["password"] == null) {
         if ($_GET["username"] == null) {
-            $_SESSION["msg"] .= "username, ";
+            $_SESSION["msg"] .= "username";
         }
         if ($_GET["password"] == null) {
             $_SESSION["msg"] .= "password";
@@ -94,14 +94,15 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
         if ($query_result != NULL) {
             #script for "this user stole your username" message
             $msg = "this user stole your username: ";
-            echo "<script>
-    var element1 = document.getElementById('form_border')
-    element1.style.border = '2px red dashed'
-    var element2 = document.getElementById('warning')
-    element2.style.display = ''
-    var element3 = document.getElementById('user_link')
-    element3.href = '" ./*insert user page address -> */ "here/" . $query_result["userID"] . "'
-</script>";
+            echo "
+                <script>
+                    var element1 = document.getElementById('form_border')
+                    element1.style.border = '2px red dashed'
+                    var element2 = document.getElementById('warning')
+                    element2.style.display = ''
+                    var element3 = document.getElementById('user_link')
+                    element3.href = '" ./*insert user page address -> */ "here/" . $query_result["userID"] . "'
+                </script>";
         } else {
             $query = "INSERT INTO `user` (`userID`, `userName`, `userImgID`, `password`) VALUES (NULL, '" . $username . "', NULL, '" . $password . "')";
             $query_return = mysqli_query($mySQL, $query);

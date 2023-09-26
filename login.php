@@ -37,16 +37,67 @@
         <div class="grid-item3"></div>
         <div class="grid-item4"></div>
         <div class="grid-item5">
-            <div class="login">
+            <div class="login" id="form_border" style="border-color: inherit;">
                 <form method="get" class="login_form">
-                    <input type="text" name="username" class="input">
+                    <input type="text" name="username" class="input" value="">
                     <input type="password" name="password" class="input">
-                    <input type="submit" class="button" value=">_login">
+                    <input type="submit" class="button" value=">_log in">
+                    <p style="display: none;" id="warning" class="center"></p>
                 </form>
             </div>
         </div>
         <div class="grid-item6"></div>
     </div>
 </body>
+<?php
+#msg declare
+$_SESSION["msg"] = "";
+#form data check
+if (!empty($_GET["username"]) || !empty($_GET["password"])) {
+
+    #creates a message for user warning
+    if ($_GET["username"] == null || $_GET["password"] == null) {
+        if ($_GET["username"] == null) {
+            $_SESSION["msg"] .= "username";
+        }
+        if ($_GET["password"] == null) {
+            $_SESSION["msg"] .= "password";
+        }
+    } else {
+        #import of mySQL config file
+        include("db_config/mySQL_config.php");
+
+        #mySQL connection
+        $mySQL = mysqli_connect($host, $user, $password, $database);
+
+
+        #form data handling
+        $username = $_GET["username"];
+        $password = hash("snefru", $_GET["password"]);
+        //var_dump($password);
+        //echo $password;
+        #username check
+        $query = "SELECT password FROM user WHERE userName = '$username'";
+        #runs SQL query
+        $query_return = mysqli_query($mySQL, $query);
+        #makes associative array
+        $query_result = mysqli_fetch_assoc($query_return);
+        if($query_result["password"] == $password){
+            echo "fuck yeahhhh";
+        }
+    }
+    if ($_SESSION["msg"] != null) {
+        #script for fucked up form
+        echo "
+            <script>
+                var element1 = document.getElementById('form_border')
+                element1.style.border = '2px red dashed'
+                var element2 = document.getElementById('warning')
+                element2.innerHTML = '>_missingElements[" . $_SESSION["msg"] . "]'
+                element2.style.display = ''
+            </script>";
+    }
+}
+?>
 
 </html>
