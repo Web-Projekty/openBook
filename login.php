@@ -82,7 +82,7 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
         $query_return = mysqli_query($mySQL, $query);
         #makes associative array
         $query_result = mysqli_fetch_assoc($query_return);
-        if($query_result["password"] == $password){
+        if ($query_result["password"] == $password) {
             echo "
             <script>
                 var element1 = document.getElementById('form_border')
@@ -91,6 +91,7 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
                 element2.innerHTML = '>_logged in succesfully'
                 element2.style.display = ''
             </script>";
+        $_SESSION["logged_in"] = true;
         }
     }
     if ($_SESSION["msg"] != null) {
@@ -103,6 +104,7 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
                 element2.innerHTML = '>_missingElements[" . $_SESSION["msg"] . "]'
                 element2.style.display = ''
             </script>";
+        unset($_SESSION["msg"]);
     }
 }
 ?>

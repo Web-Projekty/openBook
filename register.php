@@ -62,7 +62,7 @@ $_SESSION["msg"] = "";
 #form data check
 if (!empty($_GET["username"]) || !empty($_GET["password"])) {
 
-#creates a message for user warning
+    #creates a message for user warning
     if ($_GET["username"] == null || $_GET["password"] == null) {
         if ($_GET["username"] == null) {
             $_SESSION["msg"] .= "username";
@@ -123,9 +123,10 @@ if (!empty($_GET["username"]) || !empty($_GET["password"])) {
                 var element1 = document.getElementById('form_border')
                 element1.style.border = '2px red dashed'
                 var element2 = document.getElementById('warning')
-                element2.innerHTML = '>_missingElements[" . $_SESSION["msg"] . "]'
+                element2.innerHTML = '>_missingElements[" . $_SESSION["msg"]  . "]'
                 element2.style.display = ''
             </script>";
+        unset($_SESSION["msg"]);
     }
 }
 
