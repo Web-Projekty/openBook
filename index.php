@@ -23,8 +23,11 @@
                 >_<a class="logo" href="/">Open\|/Book</a></div>
             <a href="login.php" class="link">
                 <h2 id='login' onmouseenter="textAdd('login')" onmouseleave="stop_timeout()">
-                    <?php if ($_SESSION["logged_in"] == true) {
-                        echo "username_here";
+                    <?php
+                    if (!empty($_SESSION["logged_in"])) {
+                        if ($_SESSION["logged_in"] == true) {
+                            echo $_SESSION["username"];
+                        }
                     } else {
                         echo "log in";
                     }

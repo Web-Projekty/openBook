@@ -7,3 +7,4 @@ function setPage($page)
     #page index
     #1->login
 }
+//session_unset();
