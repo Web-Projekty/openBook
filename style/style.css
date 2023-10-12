@@ -84,3 +84,21 @@ h2 {
 .center {
     text-align: center;
 }
+.pages {
+    border: 2px black dashed;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    justify-content: center;
+}
+.pages-text {
+    margin: auto;
+    text-decoration: none;
+    transition: 200ms;
+    color: black;
+}
+.pages-text:hover {
+    font-size: 1.1rem;
+    font-style: italic;
+}

@@ -45,7 +45,7 @@
                 <h4>post_descripiton</h4>
                 <img class="post" src="img/post/post_x.png" alt="post_img">
             </div>
--->
+        -->
         <div class="content">
             <?php
 
@@ -56,6 +56,9 @@
             $mySQL = mysqli_connect($host, $user, $password, $database);
             $query = "SELECT * FROM post ORDER BY date DESC";
             $query_return = mysqli_query($mySQL, $query);
+
+            #assign number of posts before data processsing
+            $postNumber = mysqli_num_rows($query_return);
 
             #mySQL data output
             while ($query_result = mysqli_fetch_assoc($query_return)) {
@@ -74,12 +77,36 @@
                     <img class='post' src='img/post/post_" . $query_result["postID"] . ".png' alt='post_img'>
                 </div>
             ";
-                //var_dump($query_result);
             };
 
             mysqli_close($mySQL);
-            ?>
+            echo ceil(($postNumber / 5));
 
+            #page echo
+            $pageCount = ceil($postNumber / 5);
+
+            if ($pageCount > 1) {
+                echo "<footer>
+                    <div class='pages'>";
+                for ($i = 1; $i <= $pageCount; $i++) {
+                    echo "<a class='pages-text' href='/index.php?page=".$i."'>".$i."</a>";
+                }
+            }
+            echo "</div>
+                </footer>";
+
+            ?>
+           <!-- footer template
+             <footer>
+                <div class="pages">
+                    <p class="pages-text">lol</p>
+                    <p class="pages-text">lol</p>
+                    <p class="pages-text">lol</p>
+                    <p class="pages-text">lol</p>
+                    <p class="pages-text">lol</p>
+                    </div>
+            </footer>-->
+            <a href="/index.php"></a>
         </div>
     </div>
     <div class="grid-item6"></div>
