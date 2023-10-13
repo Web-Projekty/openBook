@@ -91,8 +91,14 @@
                         #data output
                         echo "
 
-                            <div class='post_container'>
-                                <img src='img/profile/profile_" . $query_result_user["userImgID"] . ".png' alt='user_logo' class='profile_logo'>
+                            <div class='post_container'>";
+                        var_dump($query_result_user);
+                        if (isset($query_result_user["userImgID"])) {
+                            echo "<img src='img/profile/profile_" . $query_result_user["userImgID"];
+                        } else {
+                            echo "<img src='img/profile/profile_0";
+                        }
+                        echo ".png' alt='user_logo' class='profile_logo'>
                                 <h3 class='username'>" . $query_result_user["userName"] . "</h3>
                                 <h4>" . $query_result["postName"] . "</h4>
                                 <img class='post' src='img/post/post_" . $query_result["postID"] . ".png' alt='post_img'>
@@ -116,7 +122,7 @@
                     $maxPage = $page + 2;
                     while ($minPage < 1 || $maxPage > $pageCount) {
                         #debug
-                        echo "<br>max:" . $maxPage . "<br>min:" . $minPage;
+                        //echo "<br>max:" . $maxPage . "<br>min:" . $minPage;
                         if ($minPage < 1) {
                             $minPage++;
                         }
@@ -125,7 +131,7 @@
                         }
                     }
                     if ($page < 3) {
-                        echo "loloec";
+                        //echo "loloec";
                         while ($maxPage != $pageCount) {
                             if ($maxPage - $minPage == 4) {
                                 break;
@@ -134,7 +140,7 @@
                         }
                     }
                     if ($pageCount - $page < 3) {
-                        echo "trolec";
+                        //echo "trolec";
                         while ($maxPage - $minPage != 4) {
                             $minPage--;
                             if ($minPage == 0) {
