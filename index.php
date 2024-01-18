@@ -92,7 +92,7 @@
                         echo "
 
                             <div class='post_container'>";
-                        var_dump($query_result_user);
+                        //var_dump($query_result_user);
                         if (isset($query_result_user["userImgID"])) {
                             echo "<img src='img/profile/profile_" . $query_result_user["userImgID"];
                         } else {
