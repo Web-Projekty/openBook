@@ -1,5 +1,5 @@
 <?php
 $host = "localhost";
-$user = "root";
-$password = "";
+$user = "openbook";
+$password = "closedbook";
 $database = "openbook";
