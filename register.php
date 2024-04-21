@@ -21,7 +21,7 @@
         <div class="grid-item2">
             <!-- Logo-->
             <div>
-                >_<a class="logo" href="/">Open\|/Book</a></div>
+                >_<a class="logo" href="index.php">Open\|/Book</a></div>
             <a href="login.php" class="link">
                 <h2 id='login' onmouseenter="textAdd('login')" onmouseleave="stop_timeout()">
                     <?php
